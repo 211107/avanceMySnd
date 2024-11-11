@@ -1,0 +1,43 @@
+﻿@page "/reporte-corporativo"
+@using System.Globalization
+
+<div class="reporte-corporativo">
+    <ResumenOperaciones Titulo="Reporte Corporativo"
+                        MostrarFavorito="true"
+                        FechaInicial="@DateTime.Today.AddDays(-7)"
+                        FechaFinal="@DateTime.Today"
+                        TextoCancelar="Cancelar"
+                        TextoImprimir="Imprimir" />
+
+    <!-- Aquí va el input para la ruta -->
+    <div class="ruta-input-container">
+        <label for="ruta" class="ruta-label">Ruta:</label>
+        <input type="text" id="ruta" class="ruta-input" placeholder="Introduce la ruta..." />
+    </div>
+</div>
+
+@code {
+    private void Cancelar()
+    {
+        try
+        {
+            // Acción de cancelación
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error en Cancelar: {ex.Message}");
+        }
+    }
+
+    private void Imprimir()
+    {
+        try
+        {
+            // Acción de impresión
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error en Imprimir: {ex.Message}");
+        }
+    }
+}

@@ -1,0 +1,192 @@
+﻿
+.resumen-operaciones {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #B7BABB;
+    border-radius: 40px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 723px;
+    position: absolute;
+    top: 140px;
+    left: 30%; /* Ajusta este valor para moverlo más a la izquierda */
+    z-index: 10;
+}
+
+
+
+/* Estilo del encabezado */
+.header {
+    position: relative;
+    background-color: #5A86A3;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    width: 78%;
+    right: -70px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+    .header h3 {
+        color: #000000;
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+/* Ícono de favorito */
+.favorito {
+    position: absolute;
+    top: 10px;
+    right: -60px; /* Ajustado a 10px para no salirse del contenedor */
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+    .favorito:hover path {
+        fill: #22C55E;
+    }
+
+/* Contenedor de filtros */
+.filtros-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Columnas de filtros */
+.filtro-columna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 45%;
+}
+
+/* Estilos para cada filtro */
+.filtro {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-date-container {
+    position: relative;
+}
+
+    .input-date-container img {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+/* Estilo del input de texto, números y fecha */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Para el label entre los inputs */
+.filtro-a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Tabla de resultados */
+.tabla-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.tabla-resultados {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .tabla-resultados th,
+    .tabla-resultados td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .tabla-resultados th {
+        background-color: #f7f7f7;
+        font-weight: bold;
+    }
+
+/* Estilo para el contenedor de botones */
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 40px;
+    margin-top: 20px;
+    padding-right: 30px;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-cancelar,
+.btn-buscar,
+.btn-imprimir {
+    width: 120px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn-cancelar {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.btn-buscar {
+    background-color: #00AA63;
+    color: #FFFFFF;
+}
+
+.btn-imprimir {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+
+/* Asegurando que los inputs tengan el mismo tamaño */
+input,
+select {
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* Estilos adicionales para íconos dentro de inputs */
+.input-date-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

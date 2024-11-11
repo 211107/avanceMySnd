@@ -1,0 +1,70 @@
+﻿@page "/reporte-desempeno-extemporaneo1"
+
+
+
+<div class="tab-bar-container">
+    <TabBar TabItems="@tabItems" ActiveTab="@selectedTab" OnTabSelected="OnTabSelected" />
+</div>
+
+<div class="re-impresion">
+    <ResumenOperaciones Titulo="Reporte Desempeño"
+                        MostrarFavorito="true"
+                        FechaInicial="@DateTime.Today.AddDays(-7)"
+                        FechaFinal="@DateTime.Today"
+                        TextoCancelar="Cancelar"
+                        TextoImprimir="Imprimir"
+                        MostrarToggleSwitch="true"
+                        SoloActivos="@SoloActivos"
+                        SoloActivosChanged="@(value => SoloActivos = value)" />
+
+</div>
+
+@code {
+    private List<string> tabItems = new List<string>
+    {
+        "Empeño",
+        "Historico",
+        "Detallado",
+        "Inventarios",
+        "Resumen",
+        "Contratos Vencidos",
+        "Pase a remate",
+        "Desempeño",
+        "Refrendos",
+        "Pagos Fijos",
+    };
+
+    private string selectedTab = "Desempeño"; // Pestaña por defecto seleccionada
+    private bool SoloActivos { get; set; }
+
+    private void OnTabSelected(string selectedTab)
+    {
+        this.selectedTab = selectedTab;
+        Console.WriteLine($"Tab seleccionado: {selectedTab}");
+    }
+
+    private void Cancelar()
+    {
+        try
+        {
+            // Acción de cancelación
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error en Cancelar: {ex.Message}");
+        }
+    }
+
+    private void Imprimir()
+    {
+        try
+        {
+            // Acción de impresión
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error en Imprimir: {ex.Message}");
+        }
+    }
+}
+

@@ -1,0 +1,171 @@
+﻿.reporte-detallado-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #B7BABB;
+    border-radius: 40px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 723px;
+    position: absolute;
+    top: 140px;
+    left: 30%; /* Ajusta este valor para moverlo más a la izquierda */
+    z-index: 10;
+}
+
+
+
+
+
+/* Contenedor de filtros */
+.filtros-detallado-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Estilos de filtros */
+.filtro-detallado label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.filtro-detallado input, .filtro-detallado select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Contenedor de botones */
+/* Estilo para el contenedor de botones */
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 40px;
+    margin-top: 20px;
+    padding-right: 30px;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-cancelar,
+.btn-buscar,
+.btn-imprimir {
+    width: 120px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn-cancelar {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.btn-buscar {
+    background-color: #00AA63;
+    color: #FFFFFF;
+}
+
+.btn-imprimir {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+/* Contenedor principal para Resumen/Detalle */
+.resumen-detalle-container {
+    padding: 20px;
+    background: #F9F9F9;
+    border: 1px solid #B7BABB;
+    border-radius: 8px;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Título de Resumen/Detalle */
+.resumen-detalle-titulo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* Estilos para las opciones (Sí/No) */
+.resumen-detalle-opciones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+    .resumen-detalle-opciones label {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        color: #000000;
+    }
+
+    /* Estilo personalizado para los radio buttons */
+    .resumen-detalle-opciones input[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #03A65A;
+        border-radius: 50%;
+        margin-right: 8px;
+        position: relative;
+        cursor: pointer;
+    }
+
+        .resumen-detalle-opciones input[type="radio"]:checked::before {
+            content: '';
+            width: 13px;
+            height: 13px;
+            background-color: #03A65A;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+        }
+/* Estilo del encabezado */
+.header {
+    position: relative;
+    background-color: #5A86A3;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    width: 78%;
+    right: -70px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+    .header h3 {
+        color: #000000;
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+/* Ícono de favorito */
+.favorito {
+    position: absolute;
+    top: 10px;
+    right: -60px; /* Ajustado a 10px para no salirse del contenedor */
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+    .favorito:hover path {
+        fill: #22C55E;
+    }

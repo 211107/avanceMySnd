@@ -1,0 +1,142 @@
+﻿@page "/reporte-auditoria"
+
+<div class="reporte-auditoria">
+   
+    <!-- Uso del componente TabBar -->
+    <div class="tab-bar-container">
+        <TabBar TabItems="@tabItems" ActiveTab="@selectedTab" OnTabSelected="OnTabSelected" />
+    </div>
+
+    <div class="card">
+        <div class="header">
+            <h3>Detalles del Reporte</h3>
+            <svg class="favorito" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      stroke="#000000" stroke-width="2" fill="none" />
+            </svg>
+        </div>
+
+        <div class="filters">
+            <div class="filter">
+                <label><i class="fas fa-building"></i> Sucursal</label>
+                <input type="text" placeholder="sucursal centro" />
+            </div>
+            <div class="filter">
+                <label><i class="fas fa-user"></i> Cajero</label>
+                <input type="text" placeholder="Ingrese el nombre del cajero" />
+            </div>
+            <div class="filter">
+                <label><i class="fas fa-calendar-alt"></i> Fecha</label>
+                <input type="date" value="2024-10-18" />
+            </div>
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="Búsqueda de Reporte" />
+        </div>
+
+        <div class="table-container">
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Movimiento</th>
+                        <th>Folio</th>
+                        <th>Iniciales</th>
+                        <th>Cuenta</th>
+                        <th>Caja</th>
+                        <th>Importe</th>
+                        <th>Movimiento</th>
+                        <th>Folio</th>
+                        <th>Iniciales</th>
+                        <th>Cuenta</th>
+                        <th>Caja</th>
+                        <th>Importe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Venta</td>
+                        <td>001</td>
+                        <td>JD</td>
+                        <td>1001</td>
+                        <td>$100.00</td>
+                        <td>1</td>
+                        <td>Devolución</td>
+                        <td>002</td>
+                        <td>AS</td>
+                        <td>1002</td>
+                        <td>$102.00</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Venta</td>
+                        <td>001</td>
+                        <td>JD</td>
+                        <td>1001</td>
+                        <td>$100.00</td>
+                        <td>1</td>
+                        <td>Devolución</td>
+                        <td>002</td>
+                        <td>AS</td>
+                        <td>1002</td>
+                        <td>$102.00</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<string> tabItems = new List<string>
+    {
+         "Auditoria",
+        "Gastos",
+        "Ingresos",
+        "Estados Financieros",
+        "Presupuesto",
+        "Balances",
+        "Proyectos",
+        "Indicadores",
+        "Inversiones",
+        "Recursos Humanos",
+        
+    };
+
+    private string selectedTab = "Auditoria"; // Pestaña por defecto seleccionada
+
+    private void OnTabSelected(string selectedTab)
+    {
+        this.selectedTab = selectedTab;
+        Console.WriteLine($"Tab seleccionado: {selectedTab}");
+    }
+
+    private void Cancelar()
+    {
+        try
+        {
+            // Acción de cancelación
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error en Cancelar: {ex.Message}");
+        }
+    }
+
+    private void Imprimir()
+    {
+        try
+        {
+            // Acción de impresión
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error en Imprimir: {ex.Message}");
+        }
+    }
+}
+
+
+ "Auditoría", "Gastos", "Ingresos", "Estados Financieros", "Presupuesto",
+        "Balances", "Proyectos", "Indicadores", "Inversiones", "Recursos Humanos"

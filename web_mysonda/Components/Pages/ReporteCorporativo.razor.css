@@ -1,0 +1,25 @@
+﻿.ruta-input-container {
+    margin-top: 300px; /* Espaciado hacia abajo para no interrumpir otros elementos */
+    display: flex;
+    flex-direction: column;
+    right: -330px;
+    align-items: flex-start;
+    position: relative; /* Asegura que el contenedor tenga un contexto para el z-index */
+    z-index: 100; /* Este valor es para asegurarse de que el input esté por encima de otros elementos */
+}
+
+.ruta-label {
+    font-size: 16px;
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el input */
+}
+
+.ruta-input {
+    width: 200%; /* Ocupa todo el ancho disponible */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #B7BABB;
+    font-size: 16px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    position: relative; /* Asegura que el input también tenga un contexto para z-index */
+    z-index: 101; /* Asegura que el input esté por encima del contenedor */
+}

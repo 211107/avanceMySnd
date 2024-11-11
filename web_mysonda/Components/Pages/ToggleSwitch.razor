@@ -1,0 +1,27 @@
+﻿<div class="toggle-container">
+    <label class="toggle-switch">
+        <input type="checkbox" checked="@IsActive" @onchange="OnToggleChanged" />
+        <span class="slider"></span>
+    </label>
+    <span class="toggle-label">@Label</span>
+</div>
+
+@code {
+    // Propiedad para enlazar el estado del interruptor
+    [Parameter]
+    public bool IsActive { get; set; }
+
+    // Evento para notificar cuando el estado cambia
+    [Parameter]
+    public EventCallback<bool> IsActiveChanged { get; set; }
+
+    // Etiqueta del interruptor
+    [Parameter]
+    public string Label { get; set; } = "Solo Activos";
+
+    private async Task OnToggleChanged(ChangeEventArgs e)
+    {
+        IsActive = (bool)e.Value;
+        await IsActiveChanged.InvokeAsync(IsActive);
+    }
+}

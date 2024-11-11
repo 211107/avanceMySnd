@@ -1,0 +1,146 @@
+﻿.re-impresion.reporte-historico-vista {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    max-width: 800px; /* Ancho ajustado */
+    margin: auto;
+}
+
+.filtros-container {
+    display: flex;
+    gap: 20px;
+}
+
+.filtro-columna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filtro1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-centrado {
+    width: 100px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.label-centrado {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.tabla-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.tabla-estilizada {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+    .tabla-estilizada th, .tabla-estilizada td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .tabla-estilizada th {
+        background-color: #f3f3f3;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .tabla-estilizada tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .tabla-estilizada tbody tr:hover {
+        background-color: #ececec;
+    }
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-column {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.limpiar-button {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+.cancelar-button {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.buscar-button {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+.imprimir-button {
+    background-color: #000000;
+    color: #ffffff;
+}
+.reporte-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #B7BABB;
+    border-radius: 40px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 723px;
+    margin: 20px auto;
+}
+
+.header {
+    position: relative;
+    background-color: #5A86A3;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto 30px;
+}
+
+    .header h3 {
+        color: #000000;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+.favorito {
+    position: absolute;
+    top: 10px;
+    right: -30px; /* Ajuste de posición */
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+    .favorito:hover path {
+        fill: #22C55E;
+    }

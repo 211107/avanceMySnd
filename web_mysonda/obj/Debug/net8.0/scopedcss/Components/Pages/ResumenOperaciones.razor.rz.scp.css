@@ -1,0 +1,129 @@
+.resumen-operaciones[b-zguovx0gvn] {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #B7BABB;
+    border-radius: 40px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 723px;
+    height: 450px;
+    position: fixed;
+    top: 140px;
+    left: 57%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.header[b-zguovx0gvn] {
+    position: relative;
+    background-color: #5A86A3;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    width: 78%;
+    right: -70px;
+    align-items:center;
+    margin-bottom: 30px;
+}
+
+    .header h3[b-zguovx0gvn] {
+        color: #000000;
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+       
+    }
+
+.favorito[b-zguovx0gvn] {
+    position: absolute;
+    top: 10px;
+    right: -60px; /* Ajustado a 10px para no salirse del contenedor */
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+    .favorito:hover path[b-zguovx0gvn] {
+        fill: #22C55E;
+    }
+
+.form-content-right[b-zguovx0gvn] {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.form-group[b-zguovx0gvn] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.date-picker[b-zguovx0gvn] {
+    padding: 10px;
+    width: 180px;
+    height: 40px;
+    border: 0.5px solid #716D6D;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.button-group-right[b-zguovx0gvn] {
+    display: flex;
+    gap: 70px;
+    margin-top: 80px;
+    position: absolute;
+    right: 50px;
+    
+}
+
+.btn-cancelar[b-zguovx0gvn], .btn-imprimir[b-zguovx0gvn] {
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 180px;
+    height: 40px;
+    font-weight: 600;
+}
+
+.btn-cancelar[b-zguovx0gvn] {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.btn-imprimir[b-zguovx0gvn] {
+    background-color: #000000;
+    color: #fff;
+}
+
+/* Contenedor principal de los ToggleSwitch, centrado en el componente */
+.toggle-switch-container[b-zguovx0gvn] {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo el grupo en el contenedor */
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Estilo para cada fila del ToggleSwitch y su etiqueta */
+.toggle-row[b-zguovx0gvn] {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    gap: 10px;
+    width: 200px; /* Ajusta el ancho para que todos los ToggleSwitch tengan el mismo ancho */
+}
+
+/* Aumenta el tamaño de la etiqueta */
+.toggle-label[b-zguovx0gvn] {
+    font-size: 16px;
+    color: #333;
+}
+
+
+

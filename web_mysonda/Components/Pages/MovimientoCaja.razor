@@ -1,0 +1,39 @@
+﻿
+<!-- MovimientosEnCaja.razor -->
+@page "/movimiento-caja"
+
+<div class="movimientos-caja">
+    <ResumenOperaciones Titulo="Movimientos en Caja"
+                        MostrarFavorito="true"
+                        FechaInicial="@DateTime.Today.AddDays(-7)"
+                        FechaFinal="@DateTime.Today"
+                        TextoCancelar="Cancelar"
+                        TextoImprimir="Imprimir" />
+</div>
+
+@code {
+   private void Cancelar()
+{
+    try
+    {
+        // Acción de cancelación
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error en Cancelar: {ex.Message}");
+    }
+}
+
+private void Imprimir()
+{
+    try
+    {
+        // Acción de impresión
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error en Imprimir: {ex.Message}");
+    }
+}
+
+}

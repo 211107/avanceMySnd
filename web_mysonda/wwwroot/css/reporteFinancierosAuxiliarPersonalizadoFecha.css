@@ -1,0 +1,483 @@
+﻿/* Contenedor principal */
+.reporte-detallado-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #B7BABB;
+    border-radius: 40px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 723px;
+    position: absolute;
+    top: 140px;
+    left: 30%; /* Ajusta este valor para moverlo más a la izquierda */
+    z-index: 10;
+}
+
+/* Contenedor de los tabs */
+
+
+/* Título del reporte */
+.reporte-detallado-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(14, 77, 115, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 56px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    width: 874px;
+    margin: 0 auto;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.reporte-detallado-titulo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.reporte-detallado-titulo h2 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.icon-fav-detallado {
+    width: 34px;
+    height: 34px;
+    margin-top: 15px;
+    cursor: pointer;
+    position: absolute;
+    right: 65px;
+}
+
+    .icon-fav-detallado.activo {
+        filter: brightness(0.5);
+    }
+
+/* Estilo para el selector y opciones */
+/* Contenedor del grupo select y opciones */
+.selector-container {
+    width: 580px; /* Ajusta según lo necesario */
+    height: auto; /* Permite que el contenedor crezca según el contenido */
+    background: #FFFFFF; /* Fondo blanco */
+    border: 1px solid #B7BABB; /* Borde delgado */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    padding: 20px; /* Espaciado interno */
+    margin: 50px auto; /* Centra el contenedor */
+    gap: 20px; /* Espaciado entre el select y los radio buttons */
+}
+
+.select-empenos-container {
+    width: 474px; /* Ancho del recuadro */
+    height: 53px; /* Altura del recuadro */
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid #000000;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/* Opciones de radio */
+.radio-group-detallado {
+    display: flex;
+    flex-direction: column; /* Apila los radio buttons en columna */
+    width: 100%; /* Asegura que los botones ocupen todo el ancho del contenedor */
+    align-items: flex-start; /* Alinea los botones a la izquierda */
+    gap: 10px; /* Espaciado entre los radio buttons */
+    padding-left: 10px /* Ajusta este valor para mover los radio buttons más a la izquierda */
+}
+
+.radio-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    margin-left: 70px;
+}
+
+.label-empenos {
+    font-family: 'Montserrat', sans-serif;
+    font-size: px; /* Ajusta el tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    color: #000000;
+    margin-bottom: 10px; /* Espaciado inferior */
+    display: block; /* Asegura que el label ocupe todo el ancho disponible */
+    margin-left: center;
+}
+
+
+/* Contenedor del select */
+.select-empenos {
+    width: 100%; /* Ocupa todo el espacio del contenedor */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    border: none; /* Sin borde adicional */
+    background: transparent; /* Usa el fondo del contenedor */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #000000; /* Color del texto */
+    padding: 0 10px; /* Espaciado interno */
+    outline: none; /* Quita el borde azul al hacer clic */
+    appearance: none; /* Remueve la flecha por defecto del navegador */
+    appearance: none; /* Remueve la flecha por defecto del navegador */
+}
+
+.select-empenos-container {
+    position: relative;
+    width: 474px; /* Ancho del recuadro */
+    height: 53px; /* Altura del recuadro */
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid #000000;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+
+/* Icono de Font Awesome dentro del select */
+.select-icon {
+    position: absolute;
+    right: 15px; /* Ajusta según sea necesario */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajusta la posición vertical */
+    pointer-events: none; /* Evita que el icono interfiera con el clic */
+    color: #000000; /* Color del icono */
+}
+/* Estilo del select */
+.select-empenos-container select {
+    width: 100%; /* Asegura que el select ocupe todo el ancho del contenedor */
+    border: none; /* Sin borde adicional */
+    background: transparent; /* Usa el fondo del contenedor */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; /* Ajusta según lo necesario */
+    color: #000000;
+    outline: none; /* Quita el borde azul al hacer clic */
+    appearance: none; /* Remueve la flecha predeterminada del navegador */
+}
+
+.label-empenos {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px; /* Ajusta el tamaño según lo necesario */
+    font-weight: bold;
+    margin-bottom: 10px; /* Espaciado entre el título y el select */
+}
+
+
+
+/* Additional box for extra content */
+.additional-box {
+    width: 634px;
+    height: 355px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 40px;
+    margin-top: 120px;
+    padding-right: 30px;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-cancelar,
+.btn-buscar,
+.btn-imprimir {
+    width: 120px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn-cancelar {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.btn-buscar {
+    background-color: #00AA63;
+    color: #FFFFFF;
+}
+
+.btn-imprimir {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+/* Contenedor de los botones de opción */
+.opciones-fechas-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px; /* Espacio entre los botones de opción */
+    margin-top: 80px; /* Ajusta el espacio superior si es necesario */
+    margin-bottom: 20px; /* Ajusta el espacio inferior si es necesario */
+}
+
+/* Estilos para los botones de opción */
+.radio-button {
+    display: none; /* Ocultar el input para personalizar el diseño */
+}
+
+.radio-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #000000;
+    cursor: pointer;
+    position: relative;
+    padding-left: 65px; /* Espacio para el círculo */
+}
+
+    /* Círculo exterior (no seleccionado) */
+    .radio-label::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 28px; /* Ajusta el tamaño del círculo exterior */
+        height: 28px;
+        border-radius: 50%;
+        border: 1px solid #000000;
+        background-color: #ffffff;
+    }
+
+/* Círculo interior (cuando está seleccionado) */
+.radio-button:checked + .radio-label::after {
+    content: "";
+    position: absolute;
+    left: 5px; /* Ajusta la posición horizontal del círculo interior */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px; /* Tamaño del círculo interior */
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+/* Contenedor de fechas */
+.fecha-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-bottom: 20px;
+    margin-top: 70px;
+}
+
+.fecha-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fecha-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-date-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-fecha {
+    box-sizing: border-box;
+    width: 204px;
+    height: 43px;
+    background: #FFFFFF;
+    border: 0.5px solid #716D6D;
+    border-radius: 8px;
+    padding: 0 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #000000;
+    outline: none;
+    text-align: center;
+}
+
+.input-date-icon {
+    position: absolute;
+    right: 40px; /* Ajusta la posición si quieres moverla más a la derecha */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+.imagen-calendario {
+    position: absolute;
+    right: 10px; /* Ajusta según lo necesites */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none; /* Desactiva la capacidad de clic de la imagen */
+}
+
+/* Ocultar el icono nativo del InputDate */
+.input-fecha::-webkit-calendar-picker-indicator {
+    opacity: 0; /* Oculta el icono nativo en navegadores WebKit */
+}
+
+.input-fecha::-webkit-inner-spin-button,
+.input-fecha::-webkit-clear-button {
+    display: none; /* Opcional: para ocultar botones adicionales */
+}
+
+/* Personalizar imagen de calendario */
+.imagen-calendario {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+/* Contenedor de los tabs */
+.tabs-detallado {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(14, 77, 115, 0.5);
+    padding: 8px 20px;
+    border-radius: 8px;
+    max-width: 1000px;
+    width: 874px;
+    margin: 20px auto;
+    z-index: 2;
+    position: relative;
+}
+
+    .tabs-detallado button {
+        background-color: transparent;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+        color: #000000;
+        transition: background-color 0.3s ease;
+    }
+
+    .tabs-detallado .active-detallado {
+        background-color: #ffffff;
+        color: #000000;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+.tab-icon-detallado {
+    font-size: 18px;
+    color: #000000;
+    margin-left: auto;
+}
+
+/* Título del reporte */
+.reporte-detallado-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(14, 77, 115, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 56px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    width: 874px;
+    margin: 0 auto;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.reporte-detallado-titulo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.reporte-detallado-titulo h2 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.icon-fav-detallado {
+    width: 34px;
+    height: 34px;
+    margin-top: 15px;
+    cursor: pointer;
+    position: absolute;
+    right: 65px;
+}
+
+    .icon-fav-detallado.activo {
+        filter: brightness(0.5);
+    }
+/* Estilo del encabezado */
+.header {
+    position: relative;
+    background-color: #5A86A3;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    width: 78%;
+    right: -70px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+    .header h3 {
+        color: #000000;
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+/* Ícono de favorito */
+.favorito {
+    position: absolute;
+    top: 10px;
+    right: -60px; /* Ajustado a 10px para no salirse del contenedor */
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+    .favorito:hover path {
+        fill: #22C55E;
+    }

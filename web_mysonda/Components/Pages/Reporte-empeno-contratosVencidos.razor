@@ -1,0 +1,182 @@
+﻿@page "/reporte-empeno-contratosVencidos"
+@* Incluir el archivo de CSS *@
+<link href="css/reporteEmpenoContratosVencidos.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+@using Microsoft.AspNetCore.Components.Forms
+
+<!-- Cabecera de pestañas -->
+<div class="tab-bar-container">
+    <TabBar TabItems="@tabItems" ActiveTab="@selectedTab" OnTabSelected="OnTabSelected" />
+</div>
+
+<div class="reporte-detallado-container">
+    <!-- Título del reporte -->
+    <div class="header">
+        <h3>Contratos Vencidos</h3>
+        <svg class="favorito" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" @onclick="ToggleFavorito">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                  stroke="#000000" stroke-width="2" fill="@favoritoColor" />
+        </svg>
+    </div>
+
+    <div class="filtros-container">
+    <!-- Columna izquierda -->
+    <div class="filtro-columna">
+        <div class="filtro">
+            <label for="fecha-desde">Desde</label>
+            <div class="input-date-container">
+                <InputDate id="fecha-desde" @bind-Value="FechaDesde" />
+                <img src="/css/img/calendario.png" alt="Calendario" class="input-date-icon" />
+            </div>
+        </div>
+        <div class="filtro">
+            <label for="contrato">Contrato</label>
+            <InputText id="contrato" @bind-Value="Contrato" />
+        </div>
+    </div>
+
+    <div class="filtro-a">A</div>
+
+    <!-- Columna derecha -->
+    <div class="filtro-columna">
+        <div class="filtro">
+            <label for="fecha-hasta">Hasta</label>
+            <div class="input-date-container">
+                <InputDate id="fecha-hasta" @bind-Value="FechaHasta" />
+                <img src="/css/img/calendario.png" alt="Calendario" class="input-date-icon" />
+            </div>
+        </div>
+        <div class="filtro">
+            <label for="contrato-a" class="hidden-label">A</label>
+            <InputText id="contrato-a" @bind-Value="ContratoA" />
+        </div>
+    </div>
+</div>
+
+<!-- Contrato mayores a (ocupa toda la fila) -->
+<div class="input-grande-container">
+    <label class="filtro-label">Contratos mayores a</label>
+    <InputNumber id="contrato-mayores" @bind-Value="ContratosMayoresA" class="input-grande" />
+</div>
+
+    <div class="filtros-ordenados-container">
+        <!-- Sección Ordenado por -->
+        <div class="filtro-ordenado">
+            <label class="filtro-label">Ordenado por</label>
+            <div class="grid-layout-ordenado">
+                <!-- Columna izquierda -->
+                <div>
+                    <input type="radio" id="contrato" name="ordenar" value="contrato" />
+                    <label for="contrato">Contrato</label>
+                </div>
+                <div>
+                    <input type="radio" id="vencimiento" name="ordenar" value="vencimiento" />
+                    <label for="vencimiento">Vencimiento</label>
+                </div>
+                <div>
+                    <input type="radio" id="comercializacion" name="ordenar" value="comercializacion" />
+                    <label for="comercializacion">Comercialización</label>
+                </div>
+                <div>
+                    <input type="radio" id="fecha" name="ordenar" value="fecha" />
+                    <label for="fecha">Fecha</label>
+                </div>
+                <div>
+                    <input type="radio" id="cliente" name="ordenar" value="cliente" />
+                    <label for="cliente">Cliente</label>
+                </div>
+                <div>
+                    <input type="radio" id="dias-vencidos" name="ordenar" value="dias-vencidos" />
+                    <label for="dias-vencidos">Días Vencidos</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Filtro -->
+        <div class="filtro-seleccion">
+            <label class="filtro-label">Filtro</label>
+            <div class="grid-layout-filtro">
+                <div>
+                    <input type="radio" id="plazo" name="filtro" value="plazo" />
+                    <label for="plazo">Plazo (Vencimiento)</label>
+                </div>
+                <div>
+                    <input type="radio" id="fecha-comercializacion" name="filtro" value="fecha-comercializacion" />
+                    <label for="fecha-comercializacion">Fecha Comercialización</label>
+                </div>
+                <div>
+                    <input type="radio" id="todos" name="filtro" value="todos" />
+                    <label for="todos">Todos</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Contenedor de botones -->
+    <div class="button-container">
+        <div class="button-column">
+        
+            <button class="btn-cancelar">Cancelar</button>
+        </div>
+        <div class="button-column">
+            <button class="btn-buscar">Buscar</button>
+            
+        </div>
+    </div>
+    <div class="tabla-container tabla-scroll">
+        <table class="tabla-resultados">
+            <thead>
+                <tr>
+                    <th>Contrato</th>
+                    <th>Fecha</th>
+                    <th>Vence</th>
+                    <th>Cliente</th>
+                    <th>Celular</th>
+                    <th>Telefono</th>
+                    <th>Avaluo</th>
+                    <th>Prestamo</th>
+                    <th>Dias Vencidos</th>
+                    <th>Tipo Tasa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="10">No hay datos disponibles</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+@code {
+    private List<string> tabItems = new List<string> {  "Empeño",
+        "Historico",
+        "Detallado",
+         "Inventarios",
+        "Resumen",
+         "Contratos Vencidos",
+        "Pase a remate",
+        "Desempeño",
+        "Refrendos",
+        "Pagos Fijos", };
+    private string selectedTab = "Contratos Vencidos";
+     private DateTime? FechaDesde { get; set; }
+    private DateTime? FechaHasta { get; set; }
+    private string Contrato { get; set; }
+    private string ContratoA { get; set; }
+    private decimal? ContratosMayoresA { get; set; }
+    private string OrdenarPor { get; set; } = "Fecha";
+    private string TipoContrato { get; set; } = "Pagados";
+    private string EmpeñoSeleccionado { get; set; } = "Vitrina";
+    private bool EsFavorito { get; set; }
+    private string favoritoColor => EsFavorito ? "#22C55E" : "none";
+
+    private void OnTabSelected(string selectedTab) => this.selectedTab = selectedTab;
+    private void ToggleFavorito() => EsFavorito = !EsFavorito;
+
+    private void Cancelar() { /* Lógica de cancelación */ }
+    private void Buscar() { /* Lógica de búsqueda */ }
+}

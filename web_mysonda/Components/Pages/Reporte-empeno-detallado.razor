@@ -1,0 +1,172 @@
+﻿@page "/reporte-empeno-detallado"
+<link href="css/reporteEmpenoDetallado.css" rel="stylesheet" />
+@using Microsoft.AspNetCore.Components.Forms
+
+<div class="tab-bar-container">
+    <TabBar TabItems="@tabItems" ActiveTab="@selectedTab" OnTabSelected="OnTabSelected" />
+</div>
+
+<div class="reporte-detallado-container">
+    <div class="header">
+        <h3>Reporte</h3>
+        <svg class="favorito" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" @onclick="ToggleFavorito">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                  stroke="#000000" stroke-width="2" fill="@favoritoColor" />
+        </svg>
+    </div>
+
+    <div class="criterios-reporte">
+        <p>Criterios del Reporte</p>
+    </div>
+
+    <!-- Contenedor de filtros -->
+    <div class="filtros-detallado-container">
+        <div class="filtro-detallado">
+            <label for="reporte">Reporte</label>
+            <InputSelect id="reporte" @bind-Value="Reporte">
+                <option value="Empeño">Empeños</option>
+                <option value="Ventas">Ventas</option>
+                <option value="Compras">Compras</option>
+            </InputSelect>
+        </div>
+        <div class="filtro-detallado">
+            <label for="fecha-inicial">Fecha Inicial</label>
+            <InputDate id="fecha-inicial" @bind-Value="FechaInicial" />
+        </div>
+        <div class="filtro-detallado">
+            <label for="fecha-final">Fecha Final</label>
+            <InputDate id="fecha-final" @bind-Value="FechaFinal" />
+        </div>
+        <div class="filtro-detallado">
+            <label for="folio-inicial">Folio Inicial</label>
+            <InputText id="folio-inicial" @bind-Value="FolioInicial" />
+        </div>
+        <div class="filtro-detallado">
+            <label for="folio-final">Folio Final</label>
+            <InputText id="folio-final" @bind-Value="FolioFinal" />
+        </div>
+        <div class="filtro-detallado">
+            <label for="categoria">Categoría</label>
+            <InputSelect id="categoria" @bind-Value="Categoria">
+                <option value="Todos">Todos</option>
+                <option value="Oro">Oro</option>
+                <option value="Electronico">Electrónico</option>
+                <option value="Relojes">Relojes</option>
+                <option value="Otros">Otros</option>
+                <option value="Pagados">Pagados</option>
+                <option value="Documentos">Documentos</option>
+                <option value="Vici">Bicicleta</option>
+                <option value="herra">Herramientas</option>
+                <option value="Platas">Platas</option>
+            </InputSelect>
+        </div>
+        <div class="filtro-detallado">
+            <label for="cliente">Cliente</label>
+            <InputText id="cliente" @bind-Value="Cliente" />
+        </div>
+        <div class="filtro-detallado">
+            <label for="empleado">Empleado</label>
+            <InputText id="empleado" @bind-Value="Empleado" />
+        </div>
+        <div class="filtro-detallado">
+            <label for="origen">Origen</label>
+            <InputSelect id="origen" @bind-Value="Origen">
+                <option value="Emp">Empeños</option>
+                <option value="Ref">Origen</option>
+            </InputSelect>
+        </div>
+        <div class="filtro-detallado">
+            <label for="destino">Destino</label>
+            <InputSelect id="destino" @bind-Value="Destino">
+                <option value="Pago Interes">Pago Interes</option>
+                <option value="Retiro">Retiros</option>
+                <option value="Fundicion">Fundición</option>
+            </InputSelect>
+        </div>
+        <div class="filtro-detallado">
+            <label for="importe-mayor">Importes mayores a</label>
+            <InputNumber id="importe-mayor" @bind-Value="ImportesMayoresA" />
+        </div>
+        <div class="filtro-detallado">
+            <label for="ordenar">Ordenar por</label>
+            <InputSelect id="ordenar" @bind-Value="OrdenarPor">
+                <option value="Fecha">Fecha</option>
+                <option value="Contrato">Contrato</option>
+                <option value="Cliente">Cliente</option>
+                <option value="Importes">Importes</option>
+                <option value="FechaMov">Fecha Movimiento</option>
+            </InputSelect>
+        </div>
+        <div class="filtro-detallado">
+            <label for="filtros-extra">Filtros extra</label>
+            <InputSelect id="filtros-extra" @bind-Value="FiltrosExtra">
+                <option value="Activos">Activos</option>
+                <option value="Cancelado">Cancelados</option>
+                <option value="Pagados">Pagados</option>
+            </InputSelect>
+        </div>
+
+        <div class="resumen-detalle-container">
+            <h3 class="resumen-detalle-titulo">Resumen/Detalle</h3>
+            <div class="resumen-detalle-opciones">
+                <label>
+                    <input type="radio" name="resumen-detalle" value="si" checked>
+                    Sí
+                </label>
+                <label>
+                    <input type="radio" name="resumen-detalle" value="no">
+                    No
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor de botones -->
+    <div class="button-container">
+        <div class="button-column">
+            <button class="btn-cancelar">Limpiar</button>
+            <button class="btn-cancelar">Cancelar</button>
+        </div>
+        <div class="button-column">
+            <button class="btn-buscar">Buscar</button>
+            <button class="btn-imprimir">Imprimir</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<string> tabItems = new List<string> {  "Empeño",
+        "Historico",
+        "Detallado",
+         "Inventarios",
+        "Resumen",
+         "Contratos Vencidos",
+        "Pase a remate",
+        "Desempeño",
+        "Refrendos",
+        "Pagos Fijos", };
+    private string selectedTab = "Detallado";
+    private string Reporte { get; set; }
+    private DateTime? FechaInicial { get; set; }
+    private DateTime? FechaFinal { get; set; }
+    private string FolioInicial { get; set; }
+    private string FolioFinal { get; set; }
+    private string Categoria { get; set; }
+    private string Cliente { get; set; }
+    private string Empleado { get; set; }
+    private string Origen { get; set; }
+    private string Destino { get; set; }
+    private decimal? ImportesMayoresA { get; set; }
+    private string OrdenarPor { get; set; } = "Fecha";
+    private string FiltrosExtra { get; set; } = "Activos";
+    private bool EsFavorito { get; set; }
+    private string favoritoColor => EsFavorito ? "#22C55E" : "none";
+
+    private void OnTabSelected(string selectedTab) => this.selectedTab = selectedTab;
+    private void ToggleFavorito() => EsFavorito = !EsFavorito;
+
+    private void Limpiar() { /* Lógica de limpieza */ }
+    private void Cancelar() { /* Lógica de cancelación */ }
+    private void Buscar() { /* Lógica de búsqueda */ }
+    private void Imprimir() { /* Lógica de impresión */ }
+}

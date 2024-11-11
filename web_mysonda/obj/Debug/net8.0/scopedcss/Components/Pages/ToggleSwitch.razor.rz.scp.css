@@ -1,0 +1,69 @@
+/* Contenedor del ToggleSwitch */
+.toggle-container[b-sqt0c3evzm] {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* Contenedor de los interruptores ToggleSwitch */
+.toggle-switch-container[b-sqt0c3evzm] {
+    display: flex;
+    flex-direction: column; /* Alinea los ToggleSwitch en columna */
+    align-items: center; /* Centra los ToggleSwitch */
+    gap: 10px; /* Espacio entre los ToggleSwitch */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Estilo del interruptor */
+.toggle-switch[b-sqt0c3evzm] {
+    position: relative;
+    display: inline-block;
+    width: 50px; /* Aumenta el ancho del interruptor */
+    height: 28px; /* Aumenta la altura del interruptor */
+}
+
+    .toggle-switch input[b-sqt0c3evzm] {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+/* Estilo del "slider" */
+.slider[b-sqt0c3evzm] {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 28px; /* Aumenta el radio para que sea un círculo más grande */
+}
+
+    .slider[b-sqt0c3evzm]:before {
+        position: absolute;
+        content: "";
+        height: 24px; /* Aumenta el tamaño del círculo */
+        width: 24px; /* Aumenta el tamaño del círculo */
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+
+input:checked + .slider[b-sqt0c3evzm] {
+    background-color: #4CAF50; /* Cambia el color cuando está activo */
+}
+
+    input:checked + .slider[b-sqt0c3evzm]:before {
+        transform: translateX(22px); /* Ajusta la distancia de movimiento */
+    }
+
+/* Estilo de la etiqueta */
+.toggle-label[b-sqt0c3evzm] {
+    font-size: 18px; /* Aumenta el tamaño de la etiqueta */
+    font-weight: 500;
+    color: #333;
+}
